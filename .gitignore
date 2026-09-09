@@ -1,0 +1,20 @@
+# Raw dataset
+data/raw/
+
+# Any local run logs
+logs/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS noise
+Thumbs.db
+.DS_Store
