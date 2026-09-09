@@ -1,0 +1,25 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+# Core data handling and numerical work
+numpy==2.5.3
+pandas==3.0.5
+
+# Figures
+matplotlib==3.11.1
+
+# Autocorrelation, STL decomposition, ADF test, OLS cross-check
+scipy==1.18.1
+statsmodels==0.15.0
+
+# StandardScaler for the neural models
+scikit-learn==1.9.0
+
+# LSTM and TCN
+torch==2.14.0+cpu
+
+# Downloading the dataset from Harvard Dataverse
+requests==2.34.2
+
+# Running the notebook. 
+notebook==7.6.2
+ipykernel==7.3.0
