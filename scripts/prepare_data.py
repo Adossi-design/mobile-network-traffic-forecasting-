@@ -53,8 +53,8 @@ class _MemCounters(ctypes.Structure):
                 ("PeakPagefileUsage", ctypes.c_size_t)]
 
 
-def peak_working_set_mb():
-    """Return the peak working set of this process in megabytes."""
+def peak_working_set_mib():
+    """Return the peak working set of this process in mebibytes."""
     try:
         kernel32 = ctypes.WinDLL("kernel32")
         psapi = ctypes.WinDLL("psapi")
@@ -187,7 +187,7 @@ def aggregate(chunk_size, verbose=True):
                      file_total, time.time() - file_started), flush=True)
 
     stats["seconds"] = time.time() - started
-    stats["peak_working_set_mb"] = peak_working_set_mb()
+    stats["peak_working_set_mib"] = peak_working_set_mib()
     return totals, stats
 
 
@@ -217,7 +217,7 @@ def run_totals(chunk_size, verbose=True):
     print("chunks processed        : %d" % stats["chunks"])
     print("chunk size              : %d rows" % chunk_size)
     print("max chunk memory        : %.2f MB" % stats["max_chunk_mb"])
-    print("peak process working set: %.1f MB" % stats["peak_working_set_mb"])
+    print("peak process working set: %.1f MiB" % stats["peak_working_set_mib"])
     print("blank internet fields   : %d (%.2f%% of rows)"
           % (stats["blank_internet"],
              100.0 * stats["blank_internet"] / max(stats["rows"], 1)))
